@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 const UserRegister = () => {
   const bodyColor = "white";
@@ -71,11 +72,11 @@ const UserRegister = () => {
             </button>
           </div>
 
-          <div className="text-right">
+          <div className="text-center">
             <p>
-              Already registered{" "}
+              Already have an account?{" "}
               <span className="text-lg text-black font-bold hover:cursor-pointer hover:underline hover:text-violet-700">
-                Sign in?
+              <Link to='/login'>LogIn</Link>
               </span>
             </p>
           </div>

@@ -5,12 +5,13 @@ const UserRegister = () => {
   document.body.style.backgroundColor = bodyColor;
 
   const btnSignupCss =
-    "text-black font-bold p-2 rounded-md bg-white w-[100] hover:bg-black hover:text-white transition bg delay-2";
+    "text-white font-bold p-2 rounded-md bg-violet-700 w-[100] hover:bg-violet-800 hover:text-white transition bg delay-2";
   const inputCss =
-    "w-[100] rounded-md h-8 focus:outline-none focus:border-r-8 border-black";
-  const headingCss = "text-center text-white font-bold text-2xl decoration-4 underline";
-  const labelCss = "text-white";
-  const innerDivCss = "bg-violet-700 w-96 p-4 rounded-md";
+    "w-[100] border-2 rounded-sm h-8 focus:outline-none focus:border-2 focus:border-violet-700";
+  const headingCss =
+    "text-center font-bold text-2xl decoration-4 underline";
+  const labelCss = "text-black";
+  const innerDivCss = "w-96 p-4 rounded-md border-2 border-violet-700";
   const outerDivCss = "flex justify-center flex-col items-center p-4 h-screen";
   return (
     <div>
@@ -40,7 +41,7 @@ const UserRegister = () => {
               className={inputCss}
               name="lname"
               id="lname"
-              placeholder="Lastt name"
+              placeholder="Last name"
             />
 
             <label htmlFor="email" className={labelCss}>
@@ -70,10 +71,10 @@ const UserRegister = () => {
             </button>
           </div>
 
-          <div className="text-right text-white">
+          <div className="text-right">
             <p>
               Already registered{" "}
-              <span className="text-lg text-black font-bold hover:cursor-pointer hover:underline">
+              <span className="text-lg text-black font-bold hover:cursor-pointer hover:underline hover:text-violet-700">
                 Sign in?
               </span>
             </p>

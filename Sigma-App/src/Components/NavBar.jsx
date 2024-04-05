@@ -1,20 +1,41 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch} from "@fortawesome/free-solid-svg-icons";
+import {
+  faMagnifyingGlass,
+  faHeart,
+  faUser,
+  faCartShopping,
+} from "@fortawesome/free-solid-svg-icons";
+
 const NavBar = () => {
+  const iconCss =
+    "text-3xl hover:border-2 hover:border-violet-700 hover:rounded-full h-14 w-14 hover:text-violet-700";
+  const outerDivCss = "flex flex-row gap-4 justify-around";
   return (
     <div>
-      <div className="border-2 border-black p-4 flex flex-row gap-4 justify-around">
-        <div className="flex-initial w-48 bg-slate-400 p-2">
-          <button>Search <FontAwesomeIcon icon="fa-solid faSearch" /></button>
-          <button>Wishlist</button>
+      <div className={outerDivCss}>
+        <div className="flex flex-initial w-36 p-2 justify-between items-center">
+          <button className={iconCss}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </button>
+          <button className={iconCss}>
+            <FontAwesomeIcon icon={faHeart} />
+          </button>
         </div>
-        <div className="flex-initial w-72 bg-slate-400 p-2">
-          <button>Sigma</button>
+
+        <div className="flex flex-initial w-72 p-2 justify-center items-center">
+          <button className="font-bold text-3xl uppercase hover:text-violet-700 hover:underline">
+            Sigma
+          </button>
         </div>
-        <div className="flex-initial w-48 bg-slate-400 p-2">
-          <button>Account</button>
-          <button>Cart</button>
+
+        <div className="flex flex-initial w-36 p-2 justify-between items-center">
+          <button className={iconCss}>
+            <FontAwesomeIcon icon={faUser} />
+          </button>
+          <button className={iconCss}>
+            <FontAwesomeIcon icon={faCartShopping} />
+          </button>
         </div>
       </div>
     </div>

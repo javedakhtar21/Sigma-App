@@ -3,11 +3,13 @@ import "./App.css";
 import UserRegister from "./Components/UserRegister";
 import Login from "./Components/userLogin";
 import NavBar from "./Components/NavBar";
+import NavBar2 from "./Components/NavBar2";
 
 function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      <NavBar2 />
       <Routes>
         <Route path="/signup" element={<UserRegister />} />
         <Route path="/login" element={<Login />} />

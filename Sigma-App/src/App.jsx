@@ -4,6 +4,7 @@ import UserRegister from "./Components/UserRegister";
 import Login from "./Components/userLogin";
 import NavBar from "./Components/NavBar";
 import NavBar2 from "./Components/NavBar2";
+import Subscribe from "./Components/subscribe";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <Route path="/signup" element={<UserRegister />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Subscribe/>
     </BrowserRouter>
+    
   );
 }
 

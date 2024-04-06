@@ -12,7 +12,7 @@ const UserRegister = () => {
   const headingCss =
     "text-center font-bold text-2xl decoration-4 underline";
   const labelCss = "text-black";
-  const innerDivCss = "w-96 p-4 rounded-md border-2 border-violet-700";
+  const innerDivCss = "w-[500px] p-4 rounded-md border-2 border-violet-700";
   const outerDivCss = "flex justify-center flex-col items-center p-4 h-screen";
   return (
     <div>

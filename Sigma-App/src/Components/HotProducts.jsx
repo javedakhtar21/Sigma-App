@@ -76,10 +76,6 @@ const HotProducts = ({ data, itemsPerPage }) => {
 
       <div className="flex justify-center m-8">
         <div className="flex justify-between gap-2">
-          {currentItems.map((item) => {
-            <h1 className={pageBtnCss}>{item}</h1>;
-          })}
-
           {
             <button
               onClick={() => {

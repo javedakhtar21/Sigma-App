@@ -6,6 +6,8 @@ import NavBar from "./Components/NavBar";
 import NavBar2 from "./Components/NavBar2";
 import Subscribe from "./Components/subscribe";
 import AllProducts from "./Components/AllProducts";
+import Menu from "./Components/SideBar/Menu";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/signup" element={<UserRegister />} />
         <Route path="/login" element={<Login />} />
         <Route path="/allproducts" element={<AllProducts />} />
+        <Route path="/menu/*" element={<Menu/>}/> 
+        <Route path="/contact" element={<Contact />}/>
       </Routes>
       {/* <Subscribe/> */}
     </BrowserRouter>

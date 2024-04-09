@@ -25,14 +25,14 @@ const subscribe = () => {
           Join our list and save 15% off on your first order.
         </h3>
 
-        <div class="flex justify-center items-center py-[30px] gap-[8px]">
-          <input
-            type="text"
-            placeholder="ENTER YOUR EMAIL ADDRESS "
-            name="email"
-            id="email"
-            className="border shadow-2xl w-[60%] p-3 text-black focus:outline-none focus:border-2 focus:border-rose-600"
-          />
+            <div class="flex justify-center items-center py-[30px] gap-[8px]">
+            <input 
+            type="text" 
+            placeholder='ENTER YOUR EMAIL ADDRESS ' 
+            name='email'
+            id='email'
+            className='border shadow-2xl w-[60%] p-3 text-black focus:outline-none focus:border-2 focus:border-rose-600'
+            />
 
           <button
             id="subscribe-btn"

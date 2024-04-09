@@ -25,7 +25,7 @@ const subscribe = () => {
                  Join our list and save 15% off on your first order.
             </h3> 
 
-            <div class="flex justify-center items-center py-[30px] gap-[8px]">
+            <div className="flex justify-center items-center py-[30px] gap-[8px]">
             <input 
             type="text" 
             placeholder='ENTER YOUR EMAIL ADDRESS ' 

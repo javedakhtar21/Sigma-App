@@ -5,6 +5,7 @@ import Login from "./Components/userLogin";
 import NavBar from "./Components/NavBar";
 import NavBar2 from "./Components/NavBar2";
 import Subscribe from "./Components/subscribe";
+import Menu from "./Components/SideBar/Menu";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/signup" element={<UserRegister />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/menu/*" element={<Menu/>}/> 
       </Routes>
       <Subscribe/>
     </BrowserRouter>

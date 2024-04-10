@@ -7,6 +7,7 @@ import NavBar2 from "./Components/NavBar2";
 import Subscribe from "./Components/subscribe";
 import Menu from "./Components/SideBar/Menu";
 import Contact from "./Components/Contact";
+import Orders from "./Components/SideBar/Orders";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" element={<UserRegister />} />
         <Route path="/login" element={<Login />} />
         <Route path="/menu/*" element={<Menu/>}/> 
+        <Route path='/menu/orders' element={<Orders/>}/>
         <Route path="/contact" element={<Contact />}/>
       </Routes>
       <Subscribe/>

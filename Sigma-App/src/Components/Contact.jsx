@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import {faFacebook} from "@fortawesome/free-brands-svg-icons";
 const Contact = () => {
   return (
     <>
@@ -34,7 +34,7 @@ const Contact = () => {
               </div>
               <div className="ml-[5%] mt-[5%]">
                 <p className="text-[20px] text-black font-semibold">FOLLOW US</p>
-                <FontAwesomeIcon icon="fa-brands fa-facebook" />
+                <FontAwesomeIcon icon={faFacebook} />
               </div>
 
             </div>

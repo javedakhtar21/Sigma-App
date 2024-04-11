@@ -75,7 +75,7 @@ const NavBar2 = () => {
           </div>
           <li className={menuItemCss}>FAQ</li>
           <li className={menuItemCss}><a href="/contact">Contact</a></li>
-          <li className={menuItemCss}>Login/SignUp</li>
+          <li className={menuItemCss}><a href="/login">Login/SignUp</a></li>
         </ul>
       </div>
     </div>

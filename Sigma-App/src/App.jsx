@@ -9,7 +9,6 @@ import AllProducts from "./Components/AllProducts";
 import Menu from "./Components/SideBar/Menu";
 import Contact from "./Components/Contact";
 import Orders from "./Components/SideBar/Orders";
-import Product1 from "./Components/Products-Details/Product1";
 
 function App() {
   return (
@@ -21,10 +20,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/allproducts" element={<AllProducts />} />
         <Route path="/menu/*" element={<Menu/>}/> 
-        <Route path="/allproducts/p1" element={<Product1 />}/>
+        <Route path='/menu/orders' element={<Orders/>}/>
         <Route path="/contact" element={<Contact />}/>
       </Routes>
-      {/* <Subscribe/> */}
+       <Subscribe/> 
     </BrowserRouter>
     
   );

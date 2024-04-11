@@ -5,6 +5,7 @@ import Login from "./Components/userLogin";
 import NavBar from "./Components/NavBar";
 import NavBar2 from "./Components/NavBar2";
 import Subscribe from "./Components/subscribe";
+import AllProducts from "./Components/AllProducts";
 import Menu from "./Components/SideBar/Menu";
 import Contact from "./Components/Contact";
 import Orders from "./Components/SideBar/Orders";
@@ -17,11 +18,12 @@ function App() {
       <Routes>
         <Route path="/signup" element={<UserRegister />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/allproducts" element={<AllProducts />} />
         <Route path="/menu/*" element={<Menu/>}/> 
         <Route path='/menu/orders' element={<Orders/>}/>
         <Route path="/contact" element={<Contact />}/>
       </Routes>
-      <Subscribe/>
+       <Subscribe/> 
     </BrowserRouter>
     
   );

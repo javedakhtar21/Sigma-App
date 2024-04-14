@@ -26,17 +26,17 @@ const HotProducts = ({ data, itemsPerPage }) => {
   const iconsDivCss='flex justify-around items-center gap-2 p-4';
   const iconsCss='text-4xl text-black hover:text-violet-700';
   const outerDivCss =
-    "m-8 rounded-md flex flex-col shadow-md justify-between gap-2 border-2 hover:border-violet-400 hover:shadow-lg";
+    "m-8 rounded-md flex flex-col shadow-md justify-between gap-2 border-b-4 hover:border-violet-700 hover:shadow-lg hover:-translate-y-2 transition-all delay-100 ease-in-out";
   const imageDivCss = "relative bg-green-100 py-12 flex justify-center rounded";
   const labelCss =
     "text-red-600 font-semibold absolute top-2 right-3 bg-red-100 px-6 py-1 rounded-2xl";
   const textDivCss = "flex justify-between p-4";
-  const pageBtnCss = `p-2 bg-gray-300 font-bold cursor-pointer hover:bg-violet-700 hover:text-white px-4 "
+  const pageBtnCss = `p-2 bg-gray-300 font-bold cursor-pointer hover:bg-violet-700 hover:text-white px-4 transition-all delay-100 ease-in-out"
   }`;
 
   return (
     <div>
-      <div className="grid grid-cols-4 mt-40">
+      <div className="grid grid-cols-4 mt-40 del">
         {currentItems.map((product) => (
           <div className={outerDivCss} key={product.itemNo}>
             <div className={imageDivCss}>
@@ -46,7 +46,7 @@ const HotProducts = ({ data, itemsPerPage }) => {
               <img
                 className="rounded-md h-[200px] w-[200px] bg-cover"
                 src={product.image}
-                alt="gucci black bag"
+                alt={product.title}
               />
             </div>
 
@@ -61,7 +61,7 @@ const HotProducts = ({ data, itemsPerPage }) => {
 
             <div className={iconsDivCss}>
               <button className={iconsCss}>
-                <FontAwesomeIcon icon={faCircleInfo} />
+                <a href={`/search/p${product.itemNo}`} target={"_blank"}><FontAwesomeIcon icon={faCircleInfo} /></a>
               </button>
               <button className={iconsCss}>
                 <FontAwesomeIcon icon={faCartShopping} />

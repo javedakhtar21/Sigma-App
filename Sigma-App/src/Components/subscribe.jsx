@@ -1,7 +1,7 @@
 import React from "react";
 import Template from "../assets/images/Subscribe.jpg";
 
-const subscribe = () => {
+const Subscribe = () => {
   const subscribeSection = {
     backgroundImage: `url(${Template})`,
     backgroundPosition: "center",
@@ -13,7 +13,7 @@ const subscribe = () => {
 
   return (
     <div
-      className="container text-white p-4 mb-5 mx-auto max-w-full"
+      className="container text-white p-4 mx-auto max-w-full"
       style={subscribeSection}
     >
       <div className=" mx-auto ">
@@ -47,4 +47,4 @@ const subscribe = () => {
   );
 };
 
-export default subscribe;
+export default Subscribe;

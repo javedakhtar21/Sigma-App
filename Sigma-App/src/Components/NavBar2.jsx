@@ -28,7 +28,7 @@ const NavBar2 = () => {
     <div>
       <div className={menuItemMainDivCss}>
         <ul className={menuItemDivCss}>
-          <li className={menuItemCss}>Home</li>
+          <li className={menuItemCss}><a href="/home">Home</a></li>
           <li className={menuItemCss}>About</li>
           <div
             className="flex gap-4 justify-between items-center relative"

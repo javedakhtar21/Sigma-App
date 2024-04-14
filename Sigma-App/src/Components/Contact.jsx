@@ -13,7 +13,7 @@ const Contact = () => {
     <>
       <div classname="mt-8">
         <div className="mt-[20px] mb-[20px] mx-auto max-w-[98%] py-[50px] bg-violet-700 text-white">
-          <h1 className="font-bold font-serif text-white text-[50px] ml-[5%]">
+          <h1 className="font-bold font-serif text-white text-4xl ml-[5%]">
             Contact Us
           </h1>
           <div className="text-xl font-semibold ml-[5%] pb-[50px]">

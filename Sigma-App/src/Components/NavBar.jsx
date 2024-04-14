@@ -18,7 +18,7 @@ const NavBar = () => {
       <div className={outerDivCss}>
         <div className={innerDivCss}>
           <button className={iconCss}>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
+            <a href="/search"><FontAwesomeIcon icon={faMagnifyingGlass} /></a>
           </button>
           <button className={iconCss}>
             <FontAwesomeIcon icon={faHeart} />
@@ -27,7 +27,7 @@ const NavBar = () => {
 
         <div className={innerDivCss}>
           <button className={logoCss}>
-            Sigma
+            <a href="/home">Sigma</a>
           </button>
         </div>
 

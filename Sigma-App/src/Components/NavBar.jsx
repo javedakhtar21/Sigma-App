@@ -6,6 +6,7 @@ import {
   faUser,
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const iconCss =
@@ -18,7 +19,7 @@ const NavBar = () => {
       <div className={outerDivCss}>
         <div className={innerDivCss}>
           <button className={iconCss}>
-            <a href="/search"><FontAwesomeIcon icon={faMagnifyingGlass} /></a>
+            <Link to='/products' ><FontAwesomeIcon icon={faMagnifyingGlass} /></Link >
           </button>
           <button className={iconCss}>
             <FontAwesomeIcon icon={faHeart} />
@@ -27,7 +28,7 @@ const NavBar = () => {
 
         <div className={innerDivCss}>
           <button className={logoCss}>
-            <a href="/home">Sigma</a>
+            <Link to='/'>Sigma</Link>
           </button>
         </div>
 

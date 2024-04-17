@@ -1,14 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import UserRegister from "./Components/UserRegister";
-import Login from "./Components/userLogin";
+import Signup from "./Components/Signup.jsx";
+import Login from "./Components/Login.jsx";
 import NavBar from "./Components/NavBar";
 import NavBar2 from "./Components/NavBar2";
 import Subscribe from "./Components/Subscribe";
 import AllProducts from "./Components/AllProducts";
-import Menu from "./Components/SideBar/Menu";
 import Contact from "./Components/Contact";
-import Orders from "./Components/SideBar/Orders";
 import Product1 from "./Components/Products-Details/Product1.jsx";
 import Product2 from "./Components/Products-Details/Product2.jsx";
 import Product3 from "./Components/Products-Details/Product3.jsx";
@@ -39,8 +37,8 @@ import Product27 from "./Components/Products-Details/Product27.jsx";
 import Product28 from "./Components/Products-Details/Product28.jsx";
 import Product29 from "./Components/Products-Details/Product29.jsx";
 import Product30 from "./Components/Products-Details/Product30.jsx";
-import Home from "./Components/Home";
-
+import About from "./Components/About.jsx";
+import Home from "./Components/Home.jsx";
 function App() {
   let productsElement = Array.from({ length: 30 });
   productsElement = [
@@ -77,28 +75,27 @@ function App() {
   ];
   const productsPath = Array.from({ length: 30 });
   return (
-    <BrowserRouter>
+    <>
       <NavBar />
       <NavBar2 />
       <Routes>
-        <Route path="/signup" element={<UserRegister />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/menu/*" element={<Menu />} />
-        <Route path="/menu/orders" element={<Orders />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<Home />}/>
+        <Route path="contact" element={<Contact />} />
+        <Route path="products" element={<AllProducts />} />
+        <Route path="login" element={<Login />} />
+        <Route path="about" element={<About />} />
+        <Route path="signup" element={<Signup />} />
 
-        {productsPath.map((_,index) => (
+        {productsPath.map((_, index) => (
           <Route
             key={index}
-            path={`/search/p${index + 1}`}
+            path={`products/p${index + 1}`}
             element={productsElement[index]}
           />
         ))}
-        <Route path="/search" element={<AllProducts />} />
-        <Route path="/" element={<Home />} />
       </Routes>
       <Subscribe />
-    </BrowserRouter>
+    </>
   );
 }
 

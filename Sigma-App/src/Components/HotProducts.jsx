@@ -5,6 +5,7 @@ import {
   faHeart,
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const HotProducts = ({ data, itemsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -61,7 +62,7 @@ const HotProducts = ({ data, itemsPerPage }) => {
 
             <div className={iconsDivCss}>
               <button className={iconsCss}>
-                <a href={`/search/p${product.itemNo}`} target={"_blank"}><FontAwesomeIcon icon={faCircleInfo} /></a>
+                <Link to={`/products/p${product.itemNo}`}><FontAwesomeIcon icon={faCircleInfo} /></Link>
               </button>
               <button className={iconsCss}>
                 <FontAwesomeIcon icon={faCartShopping} />

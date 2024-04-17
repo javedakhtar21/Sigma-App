@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import data from "../../Data/hotProducts";
+import AdditionalInfo from "./Additional-Details/AdditionalInfo";
+import { Link } from "react-router-dom";
 
 const Product1 = () => {
   const prodPriceOff = "20% OFF";
@@ -7,32 +9,24 @@ const Product1 = () => {
   const prodTempPrice = "500RS";
   const prodAvailStatus = "In stock";
 
-  const [descriptionFlag, setDescriptionFlag] = useState(true);
-  const [additionalInfoFlag, setAdditionalInfoFlag] = useState(false);
-  const [reviewsFlag, setReviewsFlag] = useState(false);
-  const [activeButton, setActiveButton] = useState(1);
-
-  const activeButtonHandler = (buttonNumber) => {
-    setActiveButton(buttonNumber);
-  };
-
-  const descriptionHandler = () => {
-    setDescriptionFlag(true);
-    setAdditionalInfoFlag(false);
-    setReviewsFlag(false);
-  };
-
-  const additionalInfoHandler = () => {
-    setAdditionalInfoFlag(true);
-    setDescriptionFlag(false);
-    setReviewsFlag(false);
-  };
-
-  const reviewsHandler = () => {
-    setReviewsFlag(true);
-    setDescriptionFlag(false);
-    setAdditionalInfoFlag(false);
-  };
+  const headerCss = "h-40 bg-violet-600 py-8 mt-24 font-bold mb-24 text-white";
+  const smallImgCss =
+    "bg-orange-100 rounded-lg w-[150px] h-[150px] border-2 hover:border-violet-600 hover:cursor-pointer p-8";
+  const smallImgDivCss = "flex w-[200px] flex-col gap-4 p-4";
+  const largeImgCss =
+    "w-[400px] h-[400px] transition-all ease-in-out delay-200";
+  const largeImgDivCss =
+    "bg-orange-100 rounded-lg w-[500px] h-[500px] flex justify-center items-center";
+  const btnAddToCartCss =
+    "transition-all ease-in delay-100 bg-white rounded-lg border-2 border-violet-600 text-violet-600 px-6 py-3 hover:bg-violet-600 hover:cursor-pointer hover:text-white";
+  const btnBuyNowCss =
+    "bg-violet-600 rounded-lg  text-white px-6 py-3 hover:bg-violet-700 hover:cursor-pointer";
+  const quantityCss =
+    "text-center w-16 h-12 border border-violet-600  focus:border-violet-600 rounded-lg";
+  const sizeCss =
+    "w-80 border h-12 border-violet-600  focus:border-violet-600 rounded-lg";
+  const availCss = "text-green-800 bg-green-200 py-1 px-4 rounded-2xl";
+  const priceDivCss = "flex items-center gap-4 mt-4 border-b-2 pb-4 mb-4";
 
   const [largeImageSrc, setLargeImageSrc] = useState();
   const imageHandler = (event) => {
@@ -40,44 +34,50 @@ const Product1 = () => {
   };
   return (
     <div className="m-4">
-      <div className="h-40 bg-violet-600 py-8 mt-24 font-bold mb-24 text-white">
-        <h1 className="ml-20 text-4xl">Bag Brown</h1>
+      {/* header code starts here */}
+      <div className={headerCss}>
+        <h1 className="ml-20 text-4xl">{data[0].title}</h1>
         <div className="ml-20 mt-10 flex gap-4">
-          <a href="/home" className="hover:underline">
+          <Link to="/" className="hover:underline">
             Home
-          </a>
-          <h1>Bag Brown</h1>
+          </Link>
+          <h1>{data[0].title}</h1>
         </div>
       </div>
+      {/* header code ends here */}
 
+      {/* small image code starts here */}
       <div className="flex flex-row gap-2 items-center">
-        <div className="flex w-[200px] flex-col gap-4 p-4">
-          <div className="bg-red-400 m-auto rounded-lg">
+        <div className={smallImgDivCss}>
+          <div className="m-auto rounded-lg">
             <img
               src={data[0].image}
               alt={data[0].title}
-              className="bg-orange-100 rounded-lg w-[150px] h-[150px] border-2 hover:border-violet-600 hover:cursor-pointer p-8 "
+              className={smallImgCss}
               onClick={imageHandler}
             />
           </div>
-          <div className="bg-red-400 m-auto rounded-lg">
+          <div className="m-auto rounded-lg">
             <img
               src={data[0].image}
               alt={data[0].title}
-              className="bg-orange-100 rounded-lg w-[150px] h-[150px] border-2 hover:border-violet-600 hover:cursor-pointer p-8"
+              className={smallImgCss}
               onClick={imageHandler}
             />
           </div>
-          <div className="bg-red-400 m-auto rounded-lg">
+          <div className="m-auto rounded-lg">
             <img
               src={data[0].image}
               alt={data[0].title}
-              className="bg-orange-100 rounded-lg w-[150px] h-[150px] border-2 hover:border-violet-600 hover:cursor-pointer p-8"
+              className={smallImgCss}
               onClick={imageHandler}
             />
           </div>
         </div>
-        <div className="bg-orange-100 rounded-lg w-[500px] h-[500px] flex justify-center items-center">
+        {/* small image code ends here */}
+
+        {/* product image preview code starts here */}
+        <div className={largeImgDivCss}>
           <img
             src={
               largeImageSrc == undefined
@@ -85,19 +85,20 @@ const Product1 = () => {
                 : largeImageSrc
             }
             alt={data[0].title}
-            className="w-[400px] h-[400px] transition-all ease-in-out delay-200"
+            className={largeImgCss}
           />
         </div>
+        {/* product image preview code ends here */}
 
         <div className="3rd-section flex-1 p-4">
           <div className="flex gap-14 items-center">
-            <h1 className="text-4xl font-thin">Brown Bag</h1>
+            <h1 className="text-4xl font-thin">{data[0].title}</h1>
             <h1 className="bg-violet-600 text-white py-1 px-4 rounded-2xl">
               {prodPriceOff}
             </h1>
           </div>
 
-          <div className="flex items-center gap-4 mt-4 border-b-2 pb-4 mb-4">
+          <div className={priceDivCss}>
             <h1 className="text-lg font-semibold">{prodActualPrice}</h1>
             <h1 className="text-gray-500 line-through">{prodTempPrice}</h1>
           </div>
@@ -105,9 +106,7 @@ const Product1 = () => {
           <div className=" flex flex-col gap-8 p-2">
             <div className="flex gap-4 items-center">
               <h1>Availability:</h1>
-              <h1 className="text-green-800 bg-green-200 py-1 px-4 rounded-2xl">
-                {prodAvailStatus}
-              </h1>
+              <h1 className={availCss}>{prodAvailStatus}</h1>
             </div>
 
             <div>
@@ -134,11 +133,7 @@ const Product1 = () => {
                 <h1>Size</h1>
               </div>
               <div>
-                <select
-                  name="prodSize"
-                  id="prodSize"
-                  className="w-80 border h-12 border-violet-600  focus:border-violet-600 rounded-lg"
-                >
+                <select name="prodSize" id="prodSize" className={sizeCss}>
                   <option value="small">Small</option>
                   <option value="medium">Medium</option>
                   <option value="large">Large</option>
@@ -153,108 +148,20 @@ const Product1 = () => {
                 min="1"
                 name="prodQuantity"
                 id="prodQuantity"
-                className="text-center w-16 h-12 border border-violet-600  focus:border-violet-600 rounded-lg"
+                className={quantityCss}
               />
             </div>
 
             <div className="flex gap-12">
-              <button className="transition-all ease-in delay-100 bg-white rounded-lg border-2 border-violet-600 text-violet-600 px-6 py-3 hover:bg-violet-600 hover:cursor-pointer hover:text-white">
-                ADD TO CART
-              </button>
-              <button className="bg-violet-600 rounded-lg  text-white px-6 py-3 hover:bg-violet-700 hover:cursor-pointer">
-                BUY NOW
-              </button>
+              <button className={btnAddToCartCss}>ADD TO CART</button>
+              <button className={btnBuyNowCss}>BUY NOW</button>
             </div>
           </div>
         </div>
       </div>
 
       {/* code starts for table type  */}
-      <div className="flex">
-        <button
-          onClick={() => {
-            descriptionHandler();
-            activeButtonHandler(1);
-          }}
-          className={`px-8 py-4 border-t-4 font-semibold ${
-            activeButton === 1
-              ? "border-violet-700  bg-gray-300"
-              : "bg-white border-white"
-          }`}
-        >
-          Description
-        </button>
-
-        <button
-          onClick={() => {
-            additionalInfoHandler();
-            activeButtonHandler(2);
-          }}
-          className={`px-8 py-4 border-t-4 font-semibold ${
-            activeButton === 2
-              ? "border-violet-700  bg-gray-300"
-              : "bg-white border-white"
-          }`}
-        >
-          Additional Information
-        </button>
-
-        <button
-          onClick={() => {
-            reviewsHandler();
-            activeButtonHandler(3);
-          }}
-          className={`px-8 py-4 border-t-4 font-semibold ${
-            activeButton === 3
-              ? "border-violet-700  bg-gray-300"
-              : "bg-white border-white"
-          }`}
-        >
-          Reviews
-        </button>
-      </div>
-
-      {descriptionFlag ? (
-        <div className={`bg-gray-300 p-12 text-black }`}>
-          <p>
-            Elevate your ensemble with our chic light brown handbag. Its
-            practical yet stylish design is ideal for organizing your essentials
-            while on the go. Whether you're running errands or attending special
-            events, this versatile accessory is sure to complement your look
-            with ease.
-          </p>
-        </div>
-      ) : null}
-
-      {additionalInfoFlag ? (
-        <div className={`bg-gray-300 p-12 text-black}`}>
-          <p>
-            Crafted from premium light brown leather, this sophisticated handbag
-            boasts a spacious main compartment with multiple pockets for your
-            everyday essentials. Its lightweight design, weighing only 1.57
-            pounds, ensures effortless carrying, while the adjustable strap
-            offers customizable comfort. Finished with stylish gold-tone
-            hardware, this versatile accessory measures 13.4”L x 6.5”W x 15.4”H,
-            making it perfect for any occasion.
-          </p>
-        </div>
-      ) : null}
-
-      {reviewsFlag ? (
-        <div className={`bg-gray-300 p-12 text-black `}>
-          <p>
-            Reviews dolor sit amet consectetur adipisicing elit. Quis non
-            tenetur quisquam dolorum cum quod illum natus repellat quibusdam
-            autem!
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non
-            tenetur quisquam dolorum cum quod illum natus repellat quibusdam
-            autem!
-          </p>
-        </div>
-      ) : null}
+      <AdditionalInfo />
     </div>
   );
 };

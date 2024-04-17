@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const NavBar2 = () => {
   const menuItemCss =
@@ -28,8 +29,8 @@ const NavBar2 = () => {
     <div>
       <div className={menuItemMainDivCss}>
         <ul className={menuItemDivCss}>
-          <li className={menuItemCss}><a href="/home">Home</a></li>
-          <li className={menuItemCss}>About</li>
+          <li className={menuItemCss}><NavLink to='/'>Home</NavLink></li>
+          <li className={menuItemCss}><NavLink to='/about'>About</NavLink></li>
           <div
             className="flex gap-4 justify-between items-center relative"
             onMouseOver={mouseOverHandler}
@@ -74,8 +75,8 @@ const NavBar2 = () => {
             ) : null}
           </div>
           <li className={menuItemCss}>FAQ</li>
-          <li className={menuItemCss}><a href="/contact">Contact</a></li>
-          <li className={menuItemCss}><a href="/login">Login/SignUp</a></li>
+          <li className={menuItemCss}><NavLink to='/contact'>Contact</NavLink></li>
+          <li className={menuItemCss}><NavLink to='/login'>Login</NavLink></li>
         </ul>
       </div>
     </div>
